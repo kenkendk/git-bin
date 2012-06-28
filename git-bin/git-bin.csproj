@@ -41,6 +41,45 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AWSSDK.1.4.11.0\lib\AWSSDK.dll</HintPath>
     </Reference>
+    <Reference Include="Duplicati.CommandLine">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.CommandLine.exe</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.CloudFiles">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.CloudFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.File">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.FTP">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.FTP.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.GoogleDocs">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.GoogleDocs.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.S3">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.SkyDrive">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.SkyDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.SSH">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.SSH.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.TahoeLAFS">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.TahoeLAFS.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Backend.WEBDAV">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Backend.WEBDAV.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.DynamicLoader">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.DynamicLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Interface">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Duplicati.Library.Utility">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Duplicati.Library.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="Objector, Version=1.0.0.79, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Objector.1.0.0.79\lib\net35\Objector.dll</HintPath>
@@ -51,6 +90,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tamir.SharpSSH">
+      <HintPath>..\packages\Duplicati 1.3.2.1355\Tamir.SharpSSH.dll</HintPath>
+    </Reference>
     <Reference Include="YamlDotNet.Core, Version=0.2.4453.29938, Culture=neutral, PublicKeyToken=2b53052c5884d7a1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\YamlDotNet.Core.1.1.15\lib\YamlDotNet.Core.dll</HintPath>
@@ -67,6 +109,7 @@
     <Compile Include="Commands\StatusCommand.cs" />
     <Compile Include="GitBinFileInfo.cs" />
     <Compile Include="GitBinFileInfoUtils.cs" />
+    <Compile Include="Remotes\DuplicatiRemote.cs" />
     <Compile Include="Remotes\RemoteProgressPrinter.cs" />
     <Compile Include="Commands\VersionCommand.cs" />
     <Compile Include="GitBinConsole.cs" />
@@ -83,7 +126,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Remotes\IRemote.cs" />
-    <Compile Include="Remotes\S3Remote.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

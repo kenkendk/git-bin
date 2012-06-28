@@ -11,6 +11,8 @@ namespace GitBin
         string S3SecretKey { get; }
         string S3Bucket { get; }
         string CacheDirectory { get; }
+        string DuplicatiUrl { get; }
+        string DuplicatiOptions { get; }
     }
 
     public class ConfigurationProvider : IConfigurationProvider
@@ -25,14 +27,19 @@ namespace GitBin
         public const string S3KeyName = "s3key";
         public const string S3SecretKeyName = "s3secretKey";
         public const string S3BucketName = "s3bucket";
+        public const string DuplicatiUrlName = "duplicatiurl";
+        public const string DuplicatiOptionsName = "duplicatioptions";
 
         private readonly IGitExecutor _gitExecutor;
 
         public long ChunkSize { get; private set; }
         public long MaximumCacheSize { get; private set; }
-        public string S3Key { get; private set; }
-        public string S3SecretKey { get; private set; }
-        public string S3Bucket { get; private set; }
+        public string S3Key { get { return GetStringValue(S3KeyName); } }
+        public string S3SecretKey { get { return GetStringValue(S3SecretKeyName); } }
+        public string S3Bucket { get { return GetStringValue(S3BucketName); } }
+        public string DuplicatiUrl { get { return GetStringValue(DuplicatiUrlName); } }
+        public string DuplicatiOptions { get { return GetStringValue(DuplicatiOptionsName); } }
+
         public string CacheDirectory { get; private set; }
 
         public ConfigurationProvider(IGitExecutor gitExecutor)
@@ -41,9 +48,6 @@ namespace GitBin
 
             this.ChunkSize = GetLongValue(ChunkSizeName, DefaultChunkSize);
             this.MaximumCacheSize = GetLongValue(MaximumCacheSizeName, DefaultMaximumCacheSize);
-            this.S3Key = GetStringValue(S3KeyName);
-            this.S3SecretKey = GetStringValue(S3SecretKeyName);
-            this.S3Bucket = GetStringValue(S3BucketName);
             this.CacheDirectory = GetCacheDirectory();
         }
 
